@@ -70,7 +70,7 @@ public class Formulario extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Stencil", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel1.setText("CONTRASEÑA");
+        jLabel1.setText("USUARIO");
 
         TxtUsuario1.setBackground(new java.awt.Color(204, 204, 204));
         TxtUsuario1.setFont(new java.awt.Font("Sylfaen", 0, 14)); // NOI18N

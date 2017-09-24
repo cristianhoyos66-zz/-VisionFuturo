@@ -6,6 +6,9 @@
 package co.com.visionfuturo.formularios;
 
 import Clases.Validacion;
+import co.com.visionfuturo.entidades.persona.Persona;
+import co.com.visionfuturo.negocio.PersonaNegocio;
+import java.util.List;
 
 
 /**
@@ -57,6 +60,12 @@ public class Principal extends javax.swing.JFrame {
         jTabbedPane3 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jTabbedPane1.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                jTabbedPane1ComponentAdded(evt);
+            }
+        });
 
         BtnAgregar.setText("Agregar");
         BtnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -261,6 +270,14 @@ public class Principal extends javax.swing.JFrame {
     private void TxtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtNombreKeyTyped
          
     }//GEN-LAST:event_TxtNombreKeyTyped
+
+    private void jTabbedPane1ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jTabbedPane1ComponentAdded
+        PersonaNegocio personaNegocio = new PersonaNegocio();
+        List<Persona> personas = personaNegocio.obtenerPersonas();
+        personas.forEach((persona) -> {
+            System.out.print(persona.getIdentificacion());
+        });
+    }//GEN-LAST:event_jTabbedPane1ComponentAdded
 
     /**
      * @param args the command line arguments
